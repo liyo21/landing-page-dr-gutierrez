@@ -1,79 +1,206 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ============================================
+   IMPORTACIONES DE TAILWIND CSS
+   ============================================ */
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* ============================================
+   GOOGLE FONTS - Inter + Merriweather
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ============================================
+   CUSTOM THEME - Tailwind CSS v4
+   ============================================ */
+@theme {
+  /* ------- Tipografías ------- */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* ------- Primary (Azul del logo) ------- */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0efff;
+  --color-primary-200: #b9ddff;
+  --color-primary-300: #7cc4ff;
+  --color-primary-400: #36a7ff;
+  --color-primary-500: #1a8cdb;
+  --color-primary-600: #1570b8;
+  --color-primary-700: #125a95;
+  --color-primary-800: #0f4a7a;
+  --color-primary-900: #0d3d64;
+  --color-primary-950: #082844;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  /* ------- Accent (Plata/Gris del listón) ------- */
+  --color-accent-50: #f8f9fa;
+  --color-accent-100: #e9ecef;
+  --color-accent-200: #dee2e6;
+  --color-accent-300: #ced4da;
+  --color-accent-400: #adb5bd;
+  --color-accent-500: #868e96;
+  --color-accent-600: #6c757d;
+  --color-accent-700: #495057;
+  --color-accent-800: #343a40;
+  --color-accent-900: #212529;
+  --color-accent-950: #121518;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  /* ------- Navy (Azul oscuro profesional) ------- */
+  --color-navy-50: #e6f0f5;
+  --color-navy-100: #cce1eb;
+  --color-navy-200: #99c3d7;
+  --color-navy-300: #66a5c3;
+  --color-navy-400: #3387af;
+  --color-navy-500: #2c5f7f;
+  --color-navy-600: #234c66;
+  --color-navy-700: #1a394d;
+  --color-navy-800: #112633;
+  --color-navy-900: #08131a;
+  --color-navy-950: #040a0d;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  /* ------- Dark Mode Surfaces ------- */
+  --color-dark-bg: #0a1929;
+  --color-dark-surface: #132f4c;
+  --color-dark-elevated: #1a3a52;
+  --color-dark-border: #1e4976;
 
-.card {
-  padding: 2em;
-}
+  /* ------- Dark Mode Text ------- */
+  --color-dark-text: #e3f2fd;
+  --color-dark-text-secondary: #b3d9ff;
+  --color-dark-text-muted: #7ea5c4;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  /* ------- Semánticos (estados) ------- */
+  --color-success-50: #ecfdf5;
+  --color-success-500: #10b981;
+  --color-success-700: #047857;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-700: #b45309;
+
+  --color-danger-50: #fef2f2;
+  --color-danger-500: #ef4444;
+  --color-danger-700: #b91c1c;
+
+  --color-info-50: #eff6ff;
+  --color-info-500: #3b82f6;
+  --color-info-700: #1d4ed8;
+
+  /* ------- Animaciones ------- */
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+}
+
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #1a394d;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-navy-800);
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: var(--color-primary-200);
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.875rem; }
+  h4 { font-size: 1.5rem; }
+
+  p {
+    color: var(--color-accent-700);
+    line-height: 1.8;
+  }
+
+  .dark p {
+    color: var(--color-dark-text-secondary);
+  }
+
+  a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
   a:hover {
-    color: #747bff;
+    color: var(--color-primary-800);
   }
-  button {
-    background-color: #f9f9f9;
+
+  .dark a {
+    color: var(--color-primary-300);
+  }
+
+  .dark a:hover {
+    color: var(--color-primary-100);
+  }
+
+  ::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-navy-900);
+  }
+
+  .dark ::selection {
+    background-color: var(--color-primary-700);
+    color: var(--color-primary-50);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-accent-100);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-400);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-600);
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: var(--color-dark-surface);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-700);
   }
 }
