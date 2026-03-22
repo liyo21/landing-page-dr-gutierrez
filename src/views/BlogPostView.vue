@@ -4,8 +4,8 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { format, parse } from 'date-fns'
 import { es } from 'date-fns/locale'
-import { blogPosts, getBlogPostBySlug } from '../data/blog'
-import { getImgPath } from '../utils/image'
+import { blogPosts, getBlogPostBySlug } from '@/data/blog'
+import { getImgPath } from '@/utils/image'
 
 const route = useRoute()
 const router = useRouter()
@@ -32,7 +32,7 @@ if (!post.value) {
 </script>
 
 <template>
-  <main v-if="post" class="pt-28 pb-20">
+  <main v-if="post" class="pt-20 pb-20 overflow-hidden bg-white dark:bg-darklight">
     <section class="container mx-auto max-w-6xl px-4">
       <div class="mb-8 flex flex-wrap items-center gap-3 text-sm font-semibold text-grey dark:text-white/55">
         <router-link to="/#blog" class="transition hover:text-primary">Blog</router-link>
