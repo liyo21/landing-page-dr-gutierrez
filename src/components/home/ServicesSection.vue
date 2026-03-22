@@ -14,7 +14,7 @@ import { Servicebox } from '../../data'
                 </span>
             </div>
 
-            <h2 class="sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:text-white"
+            <h2 class="text-xl sm:text-2xl md:text-4xl leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:text-white"
                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 Cuidado oncológico pensado para darte claridad, acompañamiento y un plan definido desde el inicio.
             </h2>
@@ -26,7 +26,7 @@ import { Servicebox } from '../../data'
 
             <div class="grid md:grid-cols-12 sm:grid-cols-8 grid-cols-1 gap-7">
                 <div v-for="(item, index) in Servicebox" :key="index"
-                    class="col-span-4 bg-white flex flex-col justify-between items-center text-center py-14 px-7 shadow-service rounded-md gap-8 dark:bg-darkmode"
+                    class="col-span-4 min-w-0 bg-white flex flex-col justify-between items-center text-center py-14 px-7 shadow-service rounded-md gap-8 dark:bg-darkmode"
                     data-aos="fade-up" :data-aos-delay="`${index * 200}`" data-aos-duration="1000"
                     data-aos-offset="300">
                     <img :src="item.icon" alt="Service Box" class="w-10 h-10 bg-no-repeat inline-block bg-contain" />

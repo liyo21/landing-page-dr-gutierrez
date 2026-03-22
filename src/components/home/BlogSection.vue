@@ -11,7 +11,7 @@ const getCoverImage = (blog: any) => {
 
 <template>
   <section class="flex flex-wrap justify-center bg-section dark:bg-darkmode" id="blog">
-    <div class="container mx-auto max-w-6xl">
+    <div class="container mx-auto max-w-6xl px-4">
       <div class="mx-auto mb-14 max-w-3xl text-center">
         <div class="mb-4 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <span class="w-3 h-3 rounded-full bg-success"></span>
@@ -21,7 +21,7 @@ const getCoverImage = (blog: any) => {
         </div>
 
         <h2
-          class="text-4xl font-bold text-midnight_text dark:text-white"
+          class="text-xl sm:text-2xl md:text-4xl font-bold text-midnight_text dark:text-white"
           data-aos="fade-up"
           data-aos-delay="200"
           data-aos-duration="1000"
@@ -44,7 +44,7 @@ const getCoverImage = (blog: any) => {
       <div class="grid grid-cols-12 gap-7">
         <article
           v-if="blogPosts[0]"
-          class="group col-span-12 overflow-hidden rounded-2xl bg-white shadow-service dark:bg-darkmode md:grid md:grid-cols-12"
+          class="group col-span-12 min-w-0 overflow-hidden rounded-2xl bg-white shadow-service dark:bg-darkmode md:grid md:grid-cols-12"
           data-aos="fade-up"
           data-aos-delay="200"
           data-aos-duration="1000"
@@ -96,7 +96,7 @@ const getCoverImage = (blog: any) => {
         <div
           v-for="(blog, i) in blogPosts.slice(1)"
           :key="blog.slug || i"
-          class="w-full md:col-span-6 col-span-12"
+          class="w-full md:col-span-6 col-span-12 min-w-0"
           data-aos="fade-up"
           :data-aos-delay="`${(i + 1) * 200}`"
           data-aos-duration="1000"
