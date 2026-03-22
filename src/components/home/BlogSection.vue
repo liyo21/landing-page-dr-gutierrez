@@ -1,7 +1,12 @@
 <!-- src/components/home/BlogSection.vue -->
 <script setup lang="ts">
 import { blogPosts } from '@/data';
-import { getImgPath } from '@/utils/image'
+import { getImgPath } from '@/utils/image';
+
+const getCoverImage = (blog: any) => {
+  return blog.coverImage ? getImgPath(blog.coverImage) : '';
+};
+
 </script>
 
 <template>
@@ -47,7 +52,7 @@ import { getImgPath } from '@/utils/image'
           <div class="relative overflow-hidden md:col-span-7">
             <router-link :to="`/blog/${blogPosts[0].slug}`" :aria-label="blogPosts[0].title || 'Artículo destacado'" class="block h-full">
               <img
-                :src="getImgPath(blogPosts[0].coverImage)"
+                :src="getCoverImage(blogPosts[0])"
                 :alt="blogPosts[0].title || 'Artículo destacado'"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 style="width: 100%; height: 100%"
@@ -100,7 +105,7 @@ import { getImgPath } from '@/utils/image'
             <div class="relative overflow-hidden">
               <router-link :to="`/blog/${blog.slug}`" :aria-label="blog.title || 'Artículo del blog'" class="block">
                 <img
-                  :src="getImgPath(blog.coverImage)"
+                  :src="getCoverImage(blog)"
                   :alt="blog.title || 'Artículo del blog'"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   style="width: 100%; height: auto"
