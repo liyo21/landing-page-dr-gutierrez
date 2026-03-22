@@ -7,10 +7,16 @@ const routes = [
         path: '/',
         name: 'home',
         component: HomeView,
+        meta: {
+            title: 'Dr. Gutierrez - Inicio',
+        }
     },
     {
         path: '/blog/:slug',
         name: 'blog-detail',
+        meta: {
+            title: 'Dr. Gutierrez - Artículo del Blog',
+        },
         component: BlogPostView
     }
 ];
@@ -31,5 +37,17 @@ const router = createRouter({
         return { top: 0 };
     },
 });
+
+router.beforeEach((to, _from, next) => {
+  document.title = to.meta.title as string || 'Dr. José Gutierrez';
+
+  const description = document.querySelector('meta[name="description"]')
+
+  if (description && to.meta.description) {
+    description.setAttribute('content', to.meta.description as string)
+  }
+
+  next()
+})
 
 export default router;
