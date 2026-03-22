@@ -9,7 +9,7 @@ import HeaderLink from './HeaderLink.vue'
 import MobileHeaderLink from './MobileHeaderLink.vue'
 
 const route = useRoute()
-const { theme, toggleTheme } = useTheme()
+const { toggleTheme } = useTheme()
 
 const navbarOpen = ref(false)
 const sticky = ref(false)

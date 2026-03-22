@@ -1,7 +1,7 @@
 <!-- src/components/home/BlogSection.vue -->
 <script setup lang="ts">
-import { blogPosts } from '../../data'
-import { Icon } from '@iconify/vue'
+import { blogPosts } from '@/data';
+import { getImgPath } from '@/utils/image'
 </script>
 
 <template>
@@ -47,7 +47,7 @@ import { Icon } from '@iconify/vue'
           <div class="relative overflow-hidden md:col-span-7">
             <router-link :to="`/blog/${blogPosts[0].slug}`" :aria-label="blogPosts[0].title || 'Artículo destacado'" class="block h-full">
               <img
-                :src="blogPosts[0].coverImage"
+                :src="getImgPath(blogPosts[0].coverImage)"
                 :alt="blogPosts[0].title || 'Artículo destacado'"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 style="width: 100%; height: 100%"
@@ -100,7 +100,7 @@ import { Icon } from '@iconify/vue'
             <div class="relative overflow-hidden">
               <router-link :to="`/blog/${blog.slug}`" :aria-label="blog.title || 'Artículo del blog'" class="block">
                 <img
-                  :src="blog.coverImage"
+                  :src="getImgPath(blog.coverImage)"
                   :alt="blog.title || 'Artículo del blog'"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   style="width: 100%; height: auto"

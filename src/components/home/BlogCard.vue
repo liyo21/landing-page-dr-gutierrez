@@ -3,8 +3,8 @@
 import { computed } from 'vue'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
-import type { Blog } from '../../types/blog'
-import { getImgPath } from '../../utils/image'
+import type { Blog } from '@/types/blog'
+import { getImgPath } from '@/utils/image'
 
 const props = defineProps<{ blog: Blog }>()
 

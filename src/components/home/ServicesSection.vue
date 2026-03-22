@@ -1,7 +1,6 @@
 <!-- src/components/home/ServicesSection.vue -->
 <script setup lang="ts">
 import { Servicebox } from '../../data'
-import { Icon } from '@iconify/vue'
 </script>
 
 <template>
