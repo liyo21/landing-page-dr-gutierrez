@@ -1,6 +1,6 @@
 <!-- src/components/layout/AppFooter.vue -->
 <script setup lang="ts">
-import { getImgPath } from '../../utils/image'
+import { getImgPath } from '@/utils/image'
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import { getImgPath } from '../../utils/image'
                             <img :src="getImgPath('/images/logo/logo-white.svg')" alt="logo" width="160" height="50"
                                 style="width: auto; height: auto" />
                         </router-link>
-                        <h2 class="text-white py-10 text-[40px] leading-tight font-bold">
+                        <h2 class="text-white py-10 text-2xl sm:text-3xl md:text-[40px] leading-tight font-bold">
                             Atención oncológica con trato humano.
                         </h2>
                     </div>
@@ -31,13 +31,13 @@ import { getImgPath } from '../../utils/image'
                         </p>
                         <div class="pb-5 sm:block flex">
                             <p class="text-base font-bold text-white">Teléfono</p>
-                            <a href="tel:+585500000000" class="text-2xl text-white/50 hover:text-white">
+                            <a href="tel:+585500000000" class="text-lg sm:text-2xl text-white/50 hover:text-white">
                                 +58 55 0000 0000
                             </a>
                         </div>
                         <div class="sm:block flex items-center gap-3">
                             <p class="text-base font-bold text-white">Email</p>
-                            <a href="mailto:contacto@drjosegutierrez.com" class="text-2xl text-white/50 hover:text-white">
+                            <a href="mailto:contacto@drjosegutierrez.com" class="text-sm sm:text-lg md:text-2xl break-all text-white/50 hover:text-white">
                                 contacto@drjosegutierrez.com
                             </a>
                         </div>
