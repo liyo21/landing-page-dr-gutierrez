@@ -2,6 +2,11 @@
 <script setup lang="ts">
 import { blogPosts } from '@/data';
 import { getImgPath } from '@/utils/image';
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+const { t, tm } = useI18n()
+
+const features = computed(() => tm('blog.features') as Array<{ title: string; description: string }>)
 
 const getCoverImage = (blog: any) => {
   return blog.coverImage ? getImgPath(blog.coverImage) : '';
@@ -16,7 +21,7 @@ const getCoverImage = (blog: any) => {
         <div class="mb-4 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <span class="w-3 h-3 rounded-full bg-success"></span>
           <span class="font-medium text-midnight_text text-sm dark:text-white/50">
-            Información para pacientes y familias
+            {{ t('blog.badge') }}
           </span>
         </div>
 
@@ -26,19 +31,18 @@ const getCoverImage = (blog: any) => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          Artículos claros para entender mejor el cáncer, su tratamiento y los siguientes pasos.
+          {{ t('blog.title') }}
         </h2>
 
         <p class="mt-4 text-base leading-7 text-grey dark:text-white/70 sm:text-lg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          Encuentra contenido útil sobre prevención, detección temprana, tratamientos y acompañamiento emocional, explicado de forma simple y confiable.
+          {{ t('blog.description') }}
         </p>
       </div>
 
       <div class="mb-8 flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-grey dark:text-white/60" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-        <span class="rounded-full bg-white px-4 py-2 shadow-sm dark:bg-darklight">Prevención</span>
-        <span class="rounded-full bg-white px-4 py-2 shadow-sm dark:bg-darklight">Diagnóstico</span>
-        <span class="rounded-full bg-white px-4 py-2 shadow-sm dark:bg-darklight">Tratamiento</span>
-        <span class="rounded-full bg-white px-4 py-2 shadow-sm dark:bg-darklight">Acompañamiento</span>
+        <span v-for="feature in features" :key="feature.title" class="rounded-full bg-white px-4 py-2 shadow-sm dark:bg-darklight">
+          {{ feature.title }}
+        </span>
       </div>
 
       <div class="grid grid-cols-12 gap-7">

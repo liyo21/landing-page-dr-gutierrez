@@ -1,6 +1,13 @@
 <!-- src/components/home/HeroSection.vue -->
 <script setup lang="ts">
-import { getImgPath } from '@/utils/image'
+import { getImgPath } from '@/utils/image';
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+const { t, tm } = useI18n()
+
+const features = computed(() => tm('hero.features') as Array<{ title: string; description: string }>)
+const imageInfo = computed(() => tm('hero.image') as { src: string; alt: string; badgeTitle: string; badgeDescription: string })
+
 </script>
 
 <template>
@@ -13,43 +20,35 @@ import { getImgPath } from '@/utils/image'
                 data-aos-delay="200" data-aos-duration="1000">
                 <div class="inline-flex w-fit items-center gap-2 rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 dark:bg-white/10 dark:text-white/80">
                     <span class="h-2.5 w-2.5 rounded-full bg-success"></span>
-                    Oncología con acompañamiento humano
+                    {{ t('hero.badge') }}
                 </div>
 
                 <div class="space-y-4">
                     <h1 class="text-2xl font-bold leading-tight text-midnight_text dark:text-white sm:text-3xl md:text-4xl lg:text-5xl md:leading-[1.15]">
-                        Tu atención oncológica, con claridad, respeto y un plan definido desde el inicio.
+                        {{ t('hero.title') }}
                     </h1>
 
                     <p class="max-w-xl text-lg text-grey dark:text-white/70 md:text-xl">
-                        El Dr. José Gutiérrez te escucha, revisa tu caso y te ayuda a entender tus opciones para que puedas tomar decisiones informadas, sin prisas y con respaldo profesional.
+                        {{ t('hero.subtitle') }}
                     </p>
                 </div>
 
                 <div class="flex w-full flex-col gap-3 sm:flex-row">
                     <a href="#contact"
                         class="inline-flex w-full items-center justify-center rounded-md bg-primary px-8 py-3 font-semibold text-white transition duration-300 hover:bg-blue-700 sm:w-auto">
-                        Agendar consulta
+                        {{ t('hero.buttonPrimary') }}
                     </a>
 
                     <a href="#services"
                         class="inline-flex w-full items-center justify-center rounded-md border border-border bg-white px-8 py-3 font-semibold text-midnight_text transition duration-300 hover:border-primary hover:text-primary dark:border-white/10 dark:bg-transparent dark:text-white sm:w-auto">
-                        Conocer atención
+                        {{ t('hero.buttonSecondary') }}
                     </a>
                 </div>
 
                 <ul class="grid gap-3 pt-2 text-sm text-grey dark:text-white/60 sm:grid-cols-3">
-                    <li class="flex items-start gap-2">
+                    <li v-for="(f, i) in features" :key="i" class="flex items-start gap-2">
                         <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
-                        <span>Valoración personalizada</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
-                        <span>Explicaciones claras</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
-                        <span>Acompañamiento a pacientes y familias</span>
+                        <span>{{ f.title }}</span>
                     </li>
                 </ul>
             </div>
@@ -61,16 +60,16 @@ import { getImgPath } from '@/utils/image'
                     <div class="absolute -left-4 top-8 h-28 w-28 rounded-full bg-primary/10 blur-3xl"></div>
                     <div class="absolute bottom-8 right-0 h-32 w-32 rounded-full bg-sky-200/40 blur-3xl"></div>
 
-                    <img :src="getImgPath('/images/hero/hero-image.png')" alt="Doctor José Gutiérrez atendiendo a un paciente"
-                        width="350" height="150" style="width: 100%; height: auto"
-                        class="relative z-10 drop-shadow-[0_24px_50px_rgba(15,23,42,0.14)]" />
+                    <img :src="getImgPath(imageInfo.src)" :alt="imageInfo.alt"
+                        width="350" height="150" style="width: 100%; height: 750px; object-fit: cover;"
+                        class="relative z-10 drop-shadow-[0_24px_50px_rgba(15,23,42,0.14)] rounded-lg" />
 
                     <div class="absolute bottom-6 left-4 z-20 max-w-60 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur dark:bg-darkmode/90">
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                            Acompañamiento
+                            {{ imageInfo.badgeTitle }}
                         </p>
                         <p class="mt-1 text-sm text-midnight_text dark:text-white">
-                            Información clara para que pacientes y familias se sientan acompañados en cada paso.
+                            {{ imageInfo.badgeDescription }}
                         </p>
                     </div>
                 </div>
