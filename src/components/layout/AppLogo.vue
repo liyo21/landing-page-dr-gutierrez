@@ -6,7 +6,7 @@ import { getImgPath } from '@/utils/image'
 <template>
   <router-link to="/">
     <img
-      :src="getImgPath('/images/logo/logo.svg')"
+      :src="getImgPath('/images/logo/logo.png')"
       alt="logo"
       width="160"
       height="50"

@@ -1,7 +1,11 @@
 <!-- src/components/home/ContactSection.vue -->
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useForm, useField } from 'vee-validate';
+import { useI18n } from 'vue-i18n';
+const { t, tm } = useI18n()
+
+const features = computed(() => tm('contact.features') as Array<{ title: string; description: string }>)
 
 const { handleSubmit } = useForm();
 
@@ -35,7 +39,7 @@ const sendWhatsappMessage = handleSubmit(() => {
 
         const fullMessage = `Hola Dr. José Gutiérrez, mi nombre es ${firstName.value} ${lastName.value}. Mi correo es ${email.value}. ${message.value}`;
         const encodedMessage = encodeURIComponent(fullMessage);
-        const whatsappUrl = `https://wa.me/56967289355?text=${encodedMessage}`;
+        const whatsappUrl = `https://wa.me/584121725596?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
     } catch (error) {
         console.error('Error al enviar el mensaje de WhatsApp:', error);
@@ -67,28 +71,21 @@ const resetFields = () => {
                     </div>
 
                     <h2 class="sm:text-4xl text-[28px] leading-tight font-bold text-white py-12">
-                        Si tú o un familiar necesitan orientación oncológica, puedes escribirnos aquí.
+                        {{ t('contact.title') }}
                     </h2>
 
                     <p class="text-white/70 text-base sm:text-lg max-w-xl pb-10">
-                        Cuéntanos brevemente tu caso y el Dr. José Gutiérrez o su equipo te indicarán el siguiente paso
-                        con claridad, respeto y confidencialidad.
+                        {{ t('contact.description') }}
                     </p>
 
                     <div class="grid grid-cols-6 pb-12">
-                        <div class="col-span-12">
-                            <span class="text-white/50 text-lg">Orientación</span>
-                            <p class="bg-transparent border-0 text-white text-lg">Valoración clara y personalizada</p>
-                        </div>
-                        <div class="col-span-12 pt-8">
-                            <span class="text-white/50 text-lg">Confidencialidad</span>
-                            <p class="bg-transparent border-0 text-white text-lg">Tu información se maneja con cuidado</p>
-                        </div>
-                        <div class="col-span-12 pt-8">
-                            <span class="text-white/50 text-lg">Acompañamiento</span>
-                            <p class="bg-transparent border-0 text-white text-lg">
-                                Para pacientes y familias que necesitan entender el siguiente paso.
-                            </p>
+                        <div 
+                            v-for="(f, i) in features" :key="i"
+                            class="col-span-12"
+                            :class="i > 0 ? 'pt-8' : ''"
+                        >
+                            <span class="text-white/50 text-lg">{{ f.title }}</span>
+                            <p class="bg-transparent border-0 text-white text-lg">{{ f.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -99,7 +96,7 @@ const resetFields = () => {
                     <div
                         class="lg:mt-0 mt-8 bg-white dark:bg-darkmode max-w-[50rem] m-auto pt-[2.1875rem] pb-8 px-[2.375rem] rounded-md relative z-10">
                         <h2 class="sm:text-3xl text-lg font-bold text-midnight_text mb-3 dark:text-white">
-                            Solicita orientación
+                            {{ t('contact.form.title') }}
                         </h2>
 
                         <form class="flex w-full m-auto justify-between flex-wrap gap-4" @submit.prevent="sendWhatsappMessage">
@@ -109,14 +106,14 @@ const resetFields = () => {
                                     <input
                                         v-model="firstName"
                                         :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', firstNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                        type="text" placeholder="Nombre" />
+                                        type="text" :placeholder="t('contact.form.nameLabel')" />
                                     <p v-if="firstNameError" class="text-red-500 text-xs mt-1">{{ firstNameError }}</p>
                                 </div>
                                 <div class="w-full">
                                     <input
                                         v-model="lastName"
                                         :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', lastNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                        type="text" placeholder="Apellido" />
+                                        type="text" :placeholder="t('contact.form.lastNameLabel')" />
                                     <p v-if="lastNameError" class="text-red-500 text-xs mt-1">{{ lastNameError }}</p>
                                 </div>
                             </div>
@@ -126,7 +123,7 @@ const resetFields = () => {
                                 <input
                                     v-model="email"
                                     :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', emailError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                    type="email" placeholder="Tu correo electrónico" />
+                                    type="email" :placeholder="t('contact.form.emailLabel')" />
                                 <p v-if="emailError" class="text-red-500 text-xs mt-1">{{ emailError }}</p>
                             </div>
 
@@ -135,7 +132,7 @@ const resetFields = () => {
                                 <textarea
                                     v-model="message"
                                     :class="['text-midnight_text h-[9.375rem] w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] !border !border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', messageError ? '!border-red-500 focus:!border-red-500' : '!border-border focus:!border-primary dark:!border-dark_border dark:focus:!border-primary']"
-                                    placeholder="Cuéntanos brevemente tu situación o diagnóstico"></textarea>
+                                    :placeholder="t('contact.form.messageLabel')"></textarea>
                                 <p v-if="messageError" class="text-red-500 text-xs mt-1">{{ messageError }}</p>
                             </div>
 
@@ -145,7 +142,7 @@ const resetFields = () => {
                                     class="w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg cursor-pointer font-semibold transition disabled:bg-primary/70 disabled:cursor-not-allowed"
                                     type="submit"
                                 >
-                                    Enviar mi caso
+                                    {{ t('contact.form.submitButton') }}
                                 </button>
                             </div>
                         </form>

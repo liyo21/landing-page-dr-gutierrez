@@ -31,14 +31,14 @@ import { getImgPath } from '@/utils/image'
                         </p>
                         <div class="pb-5 sm:block flex">
                             <p class="text-base font-bold text-white">Teléfono</p>
-                            <a href="tel:+585500000000" class="text-white/50 hover:text-white">
-                                +58 55 0000 0000
+                            <a href="tel:+584121725596" class="text-white/50 hover:text-white">
+                                +58 412 1725596
                             </a>
                         </div>
                         <div class="sm:block flex items-center gap-3">
                             <p class="text-base font-bold text-white">Email</p>
-                            <a href="mailto:contacto@drjosegutierrez.com" class="text-white/50 hover:text-white">
-                                contacto@drjosegutierrez.com
+                            <a href="mailto:contacto@drjosegutierrezf.com" class="text-white/50 hover:text-white">
+                                contacto@drjosegutierrezf.com
                             </a>
                         </div>
                         <div>
@@ -120,7 +120,9 @@ import { getImgPath } from '@/utils/image'
                 </ul>
             </div>
             <div>
-                <p class="text-base text-white/50">© 2026 Dr. José Gutiérrez. Atención oncológica con enfoque humano.</p>
+                <p class="text-base text-white/50">© 2026 Sitio desarrollado por 
+                    <a href="https://liyo21.github.io/portfolio/" class="hover:text-primary">Eliyonai Molero</a>.
+                </p>
             </div>
         </div>
     </footer>
