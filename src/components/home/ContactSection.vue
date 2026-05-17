@@ -19,12 +19,6 @@ const { value: lastName, errorMessage: lastNameError } = useField<string>('lastN
     return true;
 });
 
-const { value: email, errorMessage: emailError } = useField<string>('email', (val) => {
-    if (!val) return 'El correo es requerido';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return 'El correo no es válido';
-    return true;
-});
-
 const { value: message, errorMessage: messageError } = useField<string>('message', (val) => {
     if (!val) return 'Debe especificar el motivo de su consulta.';
     if ((val as string).length < 10) return 'Debe especificar el motivo de su consulta con al menos 10 caracteres.';
@@ -37,7 +31,7 @@ const sendWhatsappMessage = handleSubmit(() => {
     try {
         isSubmitting.value = true;
 
-        const fullMessage = `Hola Dr. José Gutiérrez, mi nombre es ${firstName.value} ${lastName.value}. Mi correo es ${email.value}. ${message.value}`;
+        const fullMessage = `Hola Dr. José Gutiérrez, mi nombre es ${firstName.value} ${lastName.value}. ${message.value}`;
         const encodedMessage = encodeURIComponent(fullMessage);
         const whatsappUrl = `https://wa.me/584121725596?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
@@ -52,7 +46,6 @@ const sendWhatsappMessage = handleSubmit(() => {
 const resetFields = () => {
     firstName.value = '';
     lastName.value = '';
-    email.value = '';
     message.value = '';
 };
 
@@ -100,31 +93,22 @@ const resetFields = () => {
                         </h2>
 
                         <form class="flex w-full m-auto justify-between flex-wrap gap-4" @submit.prevent="sendWhatsappMessage">
-                            <!-- Nombre y Apellido -->
-                            <div class="flex gap-4 w-full">
-                                <div class="w-full">
-                                    <input
-                                        v-model="firstName"
-                                        :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', firstNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                        type="text" :placeholder="t('contact.form.nameLabel')" />
-                                    <p v-if="firstNameError" class="text-red-500 text-xs mt-1">{{ firstNameError }}</p>
-                                </div>
-                                <div class="w-full">
-                                    <input
-                                        v-model="lastName"
-                                        :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', lastNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                        type="text" :placeholder="t('contact.form.lastNameLabel')" />
-                                    <p v-if="lastNameError" class="text-red-500 text-xs mt-1">{{ lastNameError }}</p>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
+                            <!-- Name -->
                             <div class="w-full">
                                 <input
-                                    v-model="email"
-                                    :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', emailError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
-                                    type="email" :placeholder="t('contact.form.emailLabel')" />
-                                <p v-if="emailError" class="text-red-500 text-xs mt-1">{{ emailError }}</p>
+                                    v-model="firstName"
+                                    :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', firstNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
+                                    type="text" :placeholder="t('contact.form.nameLabel')" />
+                                <p v-if="firstNameError" class="text-red-500 text-xs mt-1">{{ firstNameError }}</p>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="w-full">
+                                <input
+                                    v-model="lastName"
+                                    :class="['text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-solid placeholder:text-grey rounded-lg focus-visible:outline-0', lastNameError ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary dark:border-dark_border dark:focus:border-primary']"
+                                    type="text" :placeholder="t('contact.form.lastNameLabel')" />
+                                <p v-if="lastNameError" class="text-red-500 text-xs mt-1">{{ lastNameError }}</p>
                             </div>
 
                             <!-- Mensaje -->
