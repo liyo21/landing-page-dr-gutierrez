@@ -22,7 +22,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory('/landing-page-dr-gutierrez/'),
+    history: createWebHistory('/'),
     routes,
     scrollBehavior(to, _from, savedPosition) {
         if (to.hash) {
