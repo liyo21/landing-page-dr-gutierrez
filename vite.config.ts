@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
-  base: '/landing-page-dr-gutierrez/',
+  base: '/',
   resolve: {
     alias: {
       "@": "/src",
