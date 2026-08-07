@@ -126,6 +126,11 @@ const resetFields = () => {
                                     class="w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg cursor-pointer font-semibold transition disabled:bg-primary/70 disabled:cursor-not-allowed"
                                     type="submit"
                                 >
+                                    <img 
+                                        src="/images/contact/whatsapp-svg.svg" 
+                                        alt=""
+                                        class="inline-block mr-2 w-7 h-7"
+                                    >
                                     {{ t('contact.form.submitButton') }}
                                 </button>
                             </div>

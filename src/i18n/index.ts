@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 const messages = {
     es: {
         hero: {
-            title: 'Atención oncológica quirúrgica Especializada, Segura y Compasiva.',
+            title: 'Atención oncológica quirúrgica especializada, segura y compasiva.',
             subtitle: 'El Dr. Jose A. Gutierrez ofrece un enfoque médico integral, brindando diagnósticos precisos y tratamientos quirúrgicos de vanguardia para patologías tanto benignas como malignas. Cada paciente recibe una evaluación personalizada para determinar el abordaje quirúrgico más seguro y efectivo, acompañándolo desde el inicio tanto al paciente como familiares.',
             buttonPrimary: 'Agendar consulta',
             buttonSecondary: 'Conocer atención',
@@ -12,7 +12,7 @@ const messages = {
                 src: '/images/hero/hero-profile-1.png',
                 alt: 'Oncología con acompañamiento humano',
                 badgeTitle: 'ACOMPAÑAMIENTO',
-                badgeDescription: 'Información clara para que pacientes y familias se sientan acompañados en cada paso.'
+                badgeDescription: 'Cuidando de ti antes, durante, y después del quirófano'
             },
             features: [
                 {
@@ -37,11 +37,102 @@ const messages = {
                 }
             ]
         },
-        services: {
+        about: {
             title: 'Tu salud oncológica en manos expertas: honestidad, empatía y una estrategia clara de principio a fin.',
-            description: 'Soy el Dr. José A. Gutierrez, especialista en cirugía general, oncológica y laparoscópica con experiencia en el diagnóstico, tratamiento quirúrgico y prevención del cáncer. Mi práctica se basa en la medicina basada en evidencia, la actualización constante y un enfoque integral centrado en el paciente.',
-            subdescription: 'Mi objetivo es escucharte, revisar tu caso y ofrecer tratamientos seguros, personalizados y con los más altos estándares de calidad médica, acompañando al paciente y sus familiares desde el inicio.',
+            description: [
+                {
+                    text: 'Soy el Dr. José A. Gutiérrez , médico especialista en Cirugía General, Cirugía Oncológica y Laparoscopia. Egresé como Cirujano General y Laparoscopista de la Universidad del Zulia (LUZ), y posteriormente realicé mi subespecialidad en Cirugía Oncológica en la Universidad Central de Venezuela (UCV), con sede en el Servicio Oncológico Hospitalario del IVSS, antiguo hospital oncológico Padre Machado.',
+                },
+                {
+                    text: 'Actualmente, me desempeño como Médico Adjunto en el Servicio de Vías Digestivas de dicha institución, lo que me mantiene en constante práctica y manejo de casos complejos.',
+                },
+                {
+                    text: 'Mi práctica médica se fundamenta en la medicina basada en evidencia, la actualización científica constante y un enfoque profundamente humano. Mi objetivo principal es escucharte, evaluar tu caso con detenimiento y ofrecerte alternativas quirúrgicas seguras, personalizadas y bajo los más altos estándares de calidad médica.',
+                }
+            ],
             badge: 'Reseña',
+        },
+        procedures: {
+            badge: 'Servicios y Procedimientos Quirúrgicos',
+            image: {
+                src: '/images/portfolio/medica-procedures.PNG',
+                alt: 'Servicios y Procedimientos Quirúrgicos',
+            },
+            items: [
+                {
+                    text: 'Colocación de catéter para quimioterapia (Catéter Port / Port-a-cath)'
+                },
+                {
+                    text: 'Biopsias abiertas y ecoguiadas (Trucut, incisionales y escisionales).'
+                },
+                {
+                    text: 'Cirugías Electivas (Mínimamente Invasiva - Laparoscópico y Abierto).'
+                },
+                {
+                    text: 'Cirugías de Emergencia.'
+                }
+            ],
+            areas: [
+                {
+                    title: 'Patologías de Vías Digestivas y Abdomen',
+                    items: [
+                        {
+                            text: 'Cáncer Gastrointestinal (Esófago, Estómago e Intestino Delgado).'
+                        },
+                        {
+                            text: 'Cáncer Colorrectal (Colon y Recto).'
+                        },
+                        {
+                            text: 'Tumores Hepatobiliares y Pancreáticos (Hígado, Vesícula Biliar, Vías Biliares y Páncreas).'
+                        },
+                        {
+                            text: 'Patologías benignas del sistema digestivo (Apendicitis, Colecistitis / Patología Vesicular, Obstrucción Intestinal).'
+                        },
+                        {
+                            text: 'Hernias y defectos de la pared abdominal (Inguinales, Umbilicales y Eventraciones).'
+                        },
+                    ]
+                },
+                {
+                    title: 'Patologías de la Mama',
+                    items: [
+                        {
+                            text: 'Cáncer de Mama.'
+                        },
+                        {
+                            text: 'Tumores benignos (Fibroadenomas, quistes y condición fibroquística).'
+                        },
+                    ]
+                },
+                {
+                    title: 'Patologías de Cabeza y Cuello',
+                    items: [
+                        {
+                            text: 'Tumores de Tiroides y Paratiroides.'
+                        },
+                        {
+                            text: 'Tumores de Glándulas Salivales (Parótida y submandibulares).'
+                        },
+                        {
+                            text: 'Tumores de la Cavidad Oral y Laringe.'
+                        }
+                    ]
+                },
+                {
+                    title: 'Tumores de Piel y Tejidos Blandos',
+                    items: [
+                        {
+                            text: 'Cáncer de piel no melanoma: Carcinoma Basocelular (CBC) y Carcinoma Espinocelular (CEC).'
+                        },
+                        {
+                            text: 'Cáncer de piel: Melanoma.'
+                        },
+                        {
+                            text: 'Sarcomas de Tejidos Blandos y Tumores Retroperitoneales.'
+                        }
+                    ]
+                }
+            ]
         },
         blog: {
             title: 'Artículos claros para entender mejor el cáncer, su tratamiento y los siguientes pasos.',
@@ -90,7 +181,7 @@ const messages = {
                 lastNameLabel: 'Apellido',
                 emailLabel: 'Correo electrónico',
                 messageLabel: 'Cuéntanos brevemente tu caso',
-                submitButton: 'Enviar consulta',
+                submitButton: 'Escribe tu consulta',
             }
         }
     },

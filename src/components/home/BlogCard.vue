@@ -17,13 +17,12 @@ const formattedDate = computed(() =>
 
 <template>
   <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-service transition hover:-translate-y-1 dark:bg-darkmode">
-    <div class="relative overflow-hidden">
-      <router-link :to="`/blog/${blog.slug}`" :aria-label="blogTitle" class="block">
+    <div class="relative aspect-video shrink-0 overflow-hidden">
+      <router-link :to="`/blog/${blog.slug}`" :aria-label="blogTitle" class="block h-full">
         <img
           :src="getImgPath(coverImage)"
           :alt="blogTitle"
-          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          style="width: 100%; height: auto"
+          class="block h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
         />
       </router-link>
 

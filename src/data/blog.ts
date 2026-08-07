@@ -16,9 +16,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'deteccion-temprana-del-cancer',
     excerpt: "Conoce por qué la detección temprana es clave para actuar a tiempo, qué señales conviene observar y cuándo buscar una valoración médica.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_1.png",
+    coverImage: "/images/blog/deteccion-temprana.png",
     author: 'Dr. José Gutierrez',
-    authorImage: '/images/blogdetail-page/silicaman.png',
+    authorImage: '/images/blogdetail-page/profile-photo.png',
     category: "Prevención",
     content: `
       <h2 class="text-2xl font-bold text-midnight_text dark:text-white">¿Qué significa detectar a tiempo?</h2>
@@ -45,9 +45,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'opciones-de-tratamiento-oncologico',
     excerpt: "Un repaso claro sobre cómo se evalúan las alternativas de tratamiento, qué factores influyen en la decisión y cómo acompañar al paciente en ese proceso.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_2.jpg",
+    coverImage: "/images/blog/tratamiento.png",
     author: 'Dr. José Gutierrez',
-    authorImage: '/images/blogdetail-page/silicaman.png',
+    authorImage: '/images/blogdetail-page/profile-photo.png',
     category: "Tratamiento",
     content: `
       <h2 class="text-2xl font-bold text-midnight_text dark:text-white">No existe un solo tratamiento para todos los casos</h2>
@@ -77,10 +77,10 @@ export const blogPosts: BlogPost[] = [
     title: "Acompañamiento al paciente con cáncer: una parte esencial del tratamiento",
     excerpt: "Explora por qué el apoyo emocional, la comunicación clara y el acompañamiento a la familia son fundamentales durante el proceso oncológico.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_3.png",
+    coverImage: "/images/blog/acompanamiento.png",
     slug: "acompanamiento-al-paciente-con-cancer",
     author: 'Dr. José Gutierrez',
-    authorImage: '/images/blogdetail-page/silicaman.png',
+    authorImage: '/images/blogdetail-page/profile-photo.png',
     category: "Acompañamiento",
     content: `
       <h2 class="text-2xl font-bold text-midnight_text dark:text-white">El acompañamiento también forma parte del tratamiento</h2>
