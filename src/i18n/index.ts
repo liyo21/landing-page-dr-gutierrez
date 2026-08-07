@@ -4,7 +4,7 @@ const messages = {
     es: {
         hero: {
             title: 'Atención oncológica quirúrgica especializada, segura y compasiva.',
-            subtitle: 'El Dr. Jose A. Gutierrez ofrece un enfoque médico integral, brindando diagnósticos precisos y tratamientos quirúrgicos de vanguardia para patologías tanto benignas como malignas. Cada paciente recibe una evaluación personalizada para determinar el abordaje quirúrgico más seguro y efectivo, acompañándolo desde el inicio tanto al paciente como familiares.',
+            subtitle: 'El Dr. José A. Gutiérrez ofrece un enfoque médico integral, brindando diagnósticos precisos y tratamientos quirúrgicos de vanguardia para patologías tanto benignas como malignas. Cada paciente recibe una evaluación personalizada para determinar el abordaje quirúrgico más seguro y efectivo, acompañándolo desde el inicio tanto al paciente como familiares.',
             buttonPrimary: 'Agendar consulta',
             buttonSecondary: 'Conocer atención',
             badge: 'Oncología con acompañamiento humano',
@@ -101,6 +101,23 @@ const messages = {
                         },
                         {
                             text: 'Tumores benignos (Fibroadenomas, quistes y condición fibroquística).'
+                        },
+                    ]
+                },
+                {
+                    title: 'Patologías Ginecológicas',
+                    items: [
+                        {
+                            text: 'Patologías cervicales (Cáncer de cuello uterino, NIC, VPH)'
+                        },
+                        {
+                            text: 'Tumores de Ovario benignos y malignos.'
+                        },
+                        {
+                            text: 'Patología endometrial (Cáncer de endometrio, Fibromatosis uterina).'
+                        },
+                        {
+                            text: 'Cáncer de vulva y vagina.'
                         },
                     ]
                 },
