@@ -65,7 +65,6 @@ if (!post.value) {
                 class="rounded-full"
                 width="72"
                 height="72"
-                style="width: auto; height: auto"
               />
               <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.14em] text-primary">Contenido revisado por</p>
@@ -86,8 +85,9 @@ if (!post.value) {
             <img
               :src="getImgPath(post.coverImage)"
               :alt="post.title"
-              class="w-full"
-              style="width: 100%; height: auto"
+              width="765"
+              height="510"
+              class="aspect-[3/2] w-full object-cover"
             />
           </div>
 

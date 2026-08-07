@@ -13,7 +13,7 @@ import { getImgPath } from '@/utils/image'
       class="dark:hidden"
     />
     <img
-      :src="getImgPath('/images/logo/logo-white.svg')"
+      :src="getImgPath('/images/logo/logo-white.png')"
       alt="logo"
       width="160"
       height="50"

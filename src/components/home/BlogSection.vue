@@ -20,7 +20,7 @@ const getCoverImage = (blog: any) => {
       <div class="mx-auto mb-14 max-w-3xl text-center">
         <div class="mb-4 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <span class="w-3 h-3 rounded-full bg-success"></span>
-          <span class="font-medium text-midnight_text text-sm dark:text-white/50">
+          <span class="font-medium text-midnight_text text-lg dark:text-white/50">
             {{ t('blog.badge') }}
           </span>
         </div>
@@ -53,13 +53,12 @@ const getCoverImage = (blog: any) => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <div class="relative overflow-hidden md:col-span-7">
+          <div class="relative aspect-video overflow-hidden md:col-span-7 md:aspect-auto">
             <router-link :to="`/blog/${blogPosts[0].slug}`" :aria-label="blogPosts[0].title || 'Artículo destacado'" class="block h-full">
               <img
                 :src="getCoverImage(blogPosts[0])"
                 :alt="blogPosts[0].title || 'Artículo destacado'"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                style="width: 100%; height: 100%"
+                class="block h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
               />
             </router-link>
 
@@ -100,19 +99,18 @@ const getCoverImage = (blog: any) => {
         <div
           v-for="(blog, i) in blogPosts.slice(1)"
           :key="blog.slug || i"
-          class="w-full md:col-span-6 col-span-12 min-w-0"
+          class="col-span-12 h-[36rem] w-full min-w-0 sm:h-[40rem] md:col-span-6"
           data-aos="fade-up"
           :data-aos-delay="`${(i + 1) * 200}`"
           data-aos-duration="1000"
         >
           <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-service transition hover:-translate-y-1 dark:bg-darkmode">
-            <div class="relative overflow-hidden">
-              <router-link :to="`/blog/${blog.slug}`" :aria-label="blog.title || 'Artículo del blog'" class="block">
+            <div class="relative aspect-video shrink-0 overflow-hidden">
+              <router-link :to="`/blog/${blog.slug}`" :aria-label="blog.title || 'Artículo del blog'" class="block h-full">
                 <img
                   :src="getCoverImage(blog)"
                   :alt="blog.title || 'Artículo del blog'"
-                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  style="width: 100%; height: auto"
+                  class="block h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
                 />
               </router-link>
 

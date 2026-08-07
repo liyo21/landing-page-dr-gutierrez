@@ -5,7 +5,8 @@ import type { Blog } from "@/types/blog";
 
 export const headerData: HeaderItem[] = [
   { label: "Inicio", href: "/" },
-  { label: "Servicios", href: "/#services" },
+  { label: "Acerca", href: "/#about" },
+  { label: "Procedimientos", href: "/#procedures" },
   { label: "Blog", href: "/#blog" },
   { label: "Contacto", href: "/#contact" },
 ];
@@ -36,7 +37,7 @@ export const blogPosts: Blog[] = [
     title: "Detección temprana del cáncer: por qué puede marcar la diferencia",
     excerpt: "Conoce por qué la detección temprana es clave para actuar a tiempo, qué señales conviene observar y cuándo buscar una valoración médica.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_1.png",
+    coverImage: "/images/blog/deteccion-temprana.png",
     slug: "deteccion-temprana-del-cancer",
     category: "Prevención",
   },
@@ -44,7 +45,7 @@ export const blogPosts: Blog[] = [
     title: "Opciones de tratamiento oncológico: cómo se define el mejor plan",
     excerpt: "Un repaso claro sobre cómo se evalúan las alternativas de tratamiento, qué factores influyen en la decisión y cómo acompañar al paciente en ese proceso.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_2.jpg",
+    coverImage: "/images/blog/tratamiento.png",
     slug: "opciones-de-tratamiento-oncologico",
     category: "Tratamiento",
   },
@@ -52,7 +53,7 @@ export const blogPosts: Blog[] = [
     title: "Acompañamiento al paciente con cáncer: una parte esencial del tratamiento",
     excerpt: "Explora por qué el apoyo emocional, la comunicación clara y el acompañamiento a la familia son fundamentales durante el proceso oncológico.",
     date: "21-03-2026",
-    coverImage: "/images/blog/blog_3.png",
+    coverImage: "/images/blog/acompanamiento.png",
     slug: "acompanamiento-al-paciente-con-cancer",
     category: "Acompañamiento",
   },

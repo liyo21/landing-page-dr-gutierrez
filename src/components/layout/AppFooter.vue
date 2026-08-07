@@ -35,51 +35,23 @@ import { getImgPath } from '@/utils/image'
                                 +58 412 1725596
                             </a>
                         </div>
-                        <div class="sm:block flex items-center gap-3">
+                        <div class="pb-5 sm:block flex items-center gap-3">
                             <p class="text-base font-bold text-white">Email</p>
-                            <a href="mailto:contacto@drjosegutierrezf.com" class="text-white/50 hover:text-white">
-                                contacto@drjosegutierrezf.com
+                            <a href="mailto:drjosegutierrezf@gmail.com" class="text-white/50 hover:text-white">
+                                drjosegutierrezf@gmail.com
+                            </a>
+                        </div>
+                        <div class="sm:block flex items-center gap-3">
+                            <p class="text-base font-bold text-white">Ubicación</p>
+                            <a href="https://goo.gl/maps/your-location" class="text-white/50 hover:text-white">
+                                Caracas | Maracaibo, Venezuela
                             </a>
                         </div>
                         <div>
                             <ul class="flex items-center gap-3 mt-[1.875rem]">
-                                <!-- Facebook -->
-                                <li class="group">
-                                    <a href="#">
-                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="#A3BBD1"
-                                            xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-primary">
-                                            <g clip-path="url(#clip_fb)">
-                                                <path
-                                                    d="M22.9128 0.769043H2.06165C1.34768 0.769472 0.7689 1.34854 0.769043 2.0628V22.9139C0.769472 23.6279 1.34854 24.2067 2.0628 24.2065H13.2889V15.1428H10.2448V11.5952H13.2889V8.98433C13.2889 5.95665 15.1372 4.3087 17.838 4.3087C19.1317 4.3087 20.2433 4.40512 20.5673 4.44818V7.61261H18.7049C17.2355 7.61261 16.951 8.31084 16.951 9.33566V11.5952H20.4643L20.0066 15.1428H16.951V24.2065H22.9128C23.6272 24.2067 24.2064 23.6278 24.2065 22.9134V2.06165C24.2063 1.34768 23.627 0.7689 22.9128 0.769043Z" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip_fb">
-                                                    <rect width="25" height="25" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <!-- Twitter -->
-                                <li class="group">
-                                    <a href="#">
-                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="#A3BBD1"
-                                            xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-primary">
-                                            <g clip-path="url(#clip_tw)">
-                                                <path
-                                                    d="M21.3412 0H1.65878C0.742615 0 0 0.742615 0 1.65878V21.3412C0 22.2574 0.742615 23 1.65878 23H21.3412C22.2574 23 23 22.2574 23 21.3412V1.65878C23 0.742615 22.2574 0 21.3412 0V0ZM16.7508 8.96648C16.7559 9.07966 16.7583 9.19337 16.7583 9.3076C16.7583 12.7955 14.1034 16.8176 9.24812 16.8178H9.24829H9.24812C7.75745 16.8178 6.37031 16.3809 5.20216 15.6321C5.4087 15.6565 5.61892 15.6686 5.83177 15.6686C7.06853 15.6686 8.20667 15.2468 9.11019 14.5387C7.95468 14.5173 6.98044 13.7542 6.64423 12.7053C6.80514 12.7362 6.97061 12.7531 7.1403 12.7531C7.38123 12.7531 7.61461 12.7206 7.83641 12.6601C6.62861 12.4183 5.71877 11.3508 5.71877 10.0727C5.71877 10.0607 5.71877 10.05 5.71912 10.039C6.07481 10.2367 6.48156 10.3557 6.91463 10.3691C6.20589 9.89615 5.74 9.08773 5.74 8.17192C5.74 7.68831 5.87073 7.23523 6.09744 6.84515C7.39912 8.44233 9.34445 9.49273 11.5383 9.6031C11.493 9.40973 11.4696 9.20828 11.4696 9.00122C11.4696 7.54407 12.6518 6.36189 14.1095 6.36189C14.8688 6.36189 15.5546 6.68283 16.0362 7.19592C16.6376 7.0773 17.2023 6.8576 17.7124 6.55526C17.515 7.17136 17.0966 7.68831 16.5516 8.01522C17.0856 7.95135 17.5945 7.80974 18.0674 7.59952C17.7141 8.12893 17.2661 8.59394 16.7508 8.96648Z" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip_tw">
-                                                    <rect width="23" height="23" fill="white" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </a>
-                                </li>
                                 <!-- LinkedIn -->
                                 <li class="group">
-                                    <a href="#">
+                                    <a href="https://www.linkedin.com/in/jdrjosegutierrezf" aria-label="LinkedIn">
                                         <svg width="22" height="23" viewBox="0 0 22 23" fill="#A3BBD1"
                                             xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-primary">
                                             <g clip-path="url(#clip_li)">
@@ -91,6 +63,17 @@ import { getImgPath } from '@/utils/image'
                                                     <rect width="22" height="23" fill="white" />
                                                 </clipPath>
                                             </defs>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <!-- Instagram -->
+                                <li class="group">
+                                    <a href="https://instagram.com/drjosegutierrezf" aria-label="Instagram">
+                                        <svg width="23" height="23" viewBox="0 0 24 24" fill="#A3BBD1"
+                                            xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-primary"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.2 2H16.8C19.6719 2 22 4.32812 22 7.2V16.8C22 19.6719 19.6719 22 16.8 22H7.2C4.32812 22 2 19.6719 2 16.8V7.2C2 4.32812 4.32812 2 7.2 2ZM16.8 4H7.2C5.43269 4 4 5.43269 4 7.2V16.8C4 18.5673 5.43269 20 7.2 20H16.8C18.5673 20 20 18.5673 20 16.8V7.2C20 5.43269 18.5673 4 16.8 4ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12ZM18.5 6.5C18.5 7.05228 18.0523 7.5 17.5 7.5C16.9477 7.5 16.5 7.05228 16.5 6.5C16.5 5.94772 16.9477 5.5 17.5 5.5C18.0523 5.5 18.5 5.94772 18.5 6.5Z" />
                                         </svg>
                                     </a>
                                 </li>
